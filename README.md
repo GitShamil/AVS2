@@ -50,3 +50,8 @@ gcc -masm=intel \
 
 # 4. результаты тестов.
 ![image](https://user-images.githubusercontent.com/113286731/200050446-b06bdfa0-1e75-41eb-8c38-4e30d770e88d.png)
+
+gcc -masm=intel     -fno-asynchronous-unwind-tables     -fno-jump-tables     -fno-stack-protector     -fno-exceptions             -ffunction-sections -Wl,--gc-sections -Os -ffunction-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables  -ffunction-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -Wl,--strip-all  ./name.c     -S -o ./name.s
+
+
+
