@@ -49,12 +49,14 @@ gcc -masm=intel \
 5) оптимизировал цикл вычисление массива B достаточн сильно. Вместо 11 раз когда мы берем A[j] или A[j-1] в условиях, я их клал в rbx и тем самым дергал стек 3 раза вместо 11, что уменьшило время.
 
 # 4. результаты тестов.
-![image](https://user-images.githubusercontent.com/113286731/200050446-b06bdfa0-1e75-41eb-8c38-4e30d770e88d.png)
+![image](https://user-images.githubusercontent.com/113286731/201534430-b5fe28a9-3cdd-4ccc-ac15-b6c7c121f640.png)
 
+
+оптимизационные функция для размера
 gcc -masm=intel     -fno-asynchronous-unwind-tables     -fno-jump-tables     -fno-stack-protector     -fno-exceptions             -ffunction-sections -Wl,--gc-sections -Os -ffunction-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables  -ffunction-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -Wl,--strip-all  ./name.c     -S -o ./name.s
 
 
-
+отимизационные функции для скорости
 gcc -masm=intel     -fno-asynchronous-unwind-tables     -fno-jump-tables     -fno-stack-protector     -fno-exceptions            -m64 -Ofast -flto -march=native -funroll-loops   ./makeString.c     -S -o ./makeString.s
 
 
