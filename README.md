@@ -55,3 +55,7 @@ gcc -masm=intel     -fno-asynchronous-unwind-tables     -fno-jump-tables     -fn
 
 
 
+gcc -masm=intel     -fno-asynchronous-unwind-tables     -fno-jump-tables     -fno-stack-protector     -fno-exceptions            -m64 -Ofast -flto -march=native -funroll-loops   ./makeString.c     -S -o ./makeString.s
+
+
+
